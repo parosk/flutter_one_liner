@@ -1,0 +1,212 @@
+{
+  "widgets": [
+    {
+      "title": "Safe Area",
+      "shortExplanation": "wrap widget to avoid affected by phone shape",
+      "tag": [
+        "layout"
+      ]
+    },
+    {
+      "title": "Expanded",
+      "shortExplanation": "wrap widget with Expanded in column/row/flex to fill the remaining area, it ignore its child original width",
+      "tag": [
+        "layout"
+      ]
+    },
+    {
+      "title": "Wrap",
+      "shortExplanation": "works like row/column, wrap widgets in row/column to next line when our of space.",
+      "tag": [
+        "layout"
+      ]
+    },
+    {
+      "title": "AnimatedContainer",
+      "shortExplanation": "provide animation interpolation of changed attribute when rebuild",
+      "tag": [
+        "animation"
+      ]
+    },
+    {
+      "title": "Opacity",
+      "shortExplanation": "",
+      "tag": [
+        "effect"
+      ]
+    },
+    {
+      "title": "FutureBuilder",
+      "shortExplanation": "build widget when future is fulfilled",
+      "tag": [
+        "builder",
+        "future"
+      ]
+    },
+    {
+      "title": "FadeTransition",
+      "shortExplanation": "",
+      "tag": [
+        "animation"
+      ]
+    },
+    {
+      "title": "FAB",
+      "shortExplanation": "Floating action button",
+      "tag": [
+        "material design"
+      ]
+    },
+    {
+      "title": "PageView",
+      "shortExplanation": "the view for the tab in a tab bar",
+      "tag": [
+        "layout"
+      ]
+    },
+    {
+      "title": "Table",
+      "shortExplanation": "Grid of widgets that cant scroll, with alignment",
+      "tag": [
+        "layout"
+      ]
+    },
+    {
+      "title": "SliverAppBar",
+      "shortExplanation": "Sliver is part of a scrollable area, scrollable app bar",
+      "tag": [
+        "layout"
+      ]
+    },
+    {
+      "title": "SliverList",
+      "shortExplanation": "List in a scrollable area",
+      "tag": [
+        "layout"
+      ]
+    },
+    {
+      "title": "SliverGrid",
+      "shortExplanation": "Grid in a scrollable area",
+      "tag": [
+        "layout"
+      ]
+    },
+    {
+      "title": "FadeInImage",
+      "shortExplanation": "Image placeholder when downloading internet image ",
+      "tag": [
+        "ui"
+      ]
+    },
+    {
+      "title": "StreamBuilder",
+      "shortExplanation": "build widget whenever stream is emitting item ",
+      "tag": [
+        "builder",
+        "stream"
+      ]
+    },
+    {
+      "title": "InheriteModel",
+      "shortExplanation": " ??? ",
+      "tag": [
+        "state management"
+      ]
+    },
+    {
+      "title": "ClipRRect",
+      "shortExplanation": "round corners for widgets",
+      "tag": [
+        "ui"
+      ]
+    },
+    {
+      "title": "Hero",
+      "shortExplanation": "animation between widget with same tag, in different screen ",
+      "tag": [
+        "animation"
+      ]
+    },
+    {
+      "title": "CustomPaint",
+      "shortExplanation": "paint the UI ourselves",
+      "tag": [
+        "ui"
+      ]
+    },
+    {
+      "title": "Tooltip",
+      "shortExplanation": " ??? ",
+      "tag": [
+        "ui"
+      ]
+    },
+    {
+      "title": "FittedBox",
+      "shortExplanation": "fit widget into another widget by overwrite some constraint/ size of child widget",
+      "tag": [
+        "layout"
+      ]
+    },
+    {
+      "title": "LayoutBuilder",
+      "shortExplanation": "widget can check the constraint given to it and decide the build logic ",
+      "tag": [
+        "layout",
+        "builder"
+      ]
+    },
+    {
+      "title": "AbsorbPointer",
+      "shortExplanation": "disable on touch event for its subtree",
+      "tag": [
+        "user input"
+      ]
+    },
+    {
+      "title": "Transform",
+      "shortExplanation": "perform translate/rotate/scale and other effect on its child widget ",
+      "tag": [
+        "ui"
+      ]
+    },
+    {
+      "title": "BackdropFilter",
+      "shortExplanation": " take in filter and image to combine both ",
+      "tag": [
+        "ui"
+      ]
+    },
+    {
+      "title": "Align",
+      "shortExplanation": "Align child widget to where we want within its parent ",
+      "tag": [
+        "ui",
+        "layout"
+      ]
+    },
+    {
+      "title": "Positioned",
+      "shortExplanation": "Position children widgets within stack ",
+      "tag": [
+        "ui",
+        "layout"
+      ]
+    },
+    {
+      "title": "AnimatedBuilder",
+      "shortExplanation": "build widget with animation, usually by providing a tween",
+      "tag": [
+        "animation"
+      ]
+    },
+    {
+      "title": "Dismissible",
+      "shortExplanation": "dismissible widget by swipe left or right ",
+      "tag": [
+        "ui"
+      ]
+    }
+  ]
+}
