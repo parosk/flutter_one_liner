@@ -38,7 +38,8 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text('Flutter One Liner (Under Construction)'),
+        title: Text(
+            'Flutter One Liner ${MediaQuery.of(context).size.width}(Under Construction)'),
       ),
       body: Center(
           // Center is a layout widget. It takes a single child and positions it
@@ -49,49 +50,57 @@ class HomePage extends StatelessWidget {
                 if (snapshot.hasData) {
                   var data = json.decode(snapshot.data);
                   return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal:100.0),
+                    padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width > 1000 ? 100.0 : MediaQuery.of(context).size.width > 500 ? 50.0 : 25.0),
                     child: GridView.builder(
                       itemCount: data['widgets'].length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 4),
+                          crossAxisCount:
+                              MediaQuery.of(context).size.width > 1000 ? 4 : MediaQuery.of(context).size.width > 500 ? 2 : 1),
                       itemBuilder: (BuildContext context, int index) {
-                        return  Card(
-                          child:  GridTile(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(8.0,16.0,0.0,16.0),
-                                  child: Text(data['widgets'][index]['title'],
-                                  style: TextStyle( fontSize: 20,fontWeight: FontWeight.bold)),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(8.0,0.0,16.0,16.0),
-                                  child: Text(data['widgets'][index]['shortExplanation'],
-                                      style: TextStyle( fontSize: 18)),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(8.0,0.0,16.0,16.0),
+                        return Card(
+                          child: GridTile(
+                              child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                    8.0, 16.0, 0.0, 16.0),
+                                child: Text(data['widgets'][index]['title'],
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                    8.0, 0.0, 16.0, 16.0),
+                                child: Text(
+                                    data['widgets'][index]['shortExplanation'],
+                                    style: TextStyle(fontSize: 18)),
+                              ),
+                              Padding(
+                                  padding: const EdgeInsets.fromLTRB(
+                                      8.0, 0.0, 16.0, 16.0),
                                   child: Wrap(
-                                    children: [for( var i in data['widgets'][index]['tag'] ) Text(
-                                  "#$i ",
-                                        style: TextStyle( fontSize: 16,color: Colors.blueGrey)
-                                )],
-                                  )
-
-                                ),
-
-                              ],
-                            )
-                            //just for testing, will fill with image later
-                          ),
+                                    children: [
+                                      for (var i in data['widgets'][index]
+                                          ['tag'])
+                                        Text("#$i ",
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.blueGrey))
+                                    ],
+                                  )),
+                            ],
+                          )
+                              //just for testing, will fill with image later
+                              ),
                         );
                       },
                     ),
                   );
-                }else if (snapshot.hasError) {
+                } else if (snapshot.hasError) {
                   return Text("Error");
-                }else{
+                } else {
                   return Text("Error");
                 }
               })), // This trailing comma makes auto-formatting nicer for build methods.
