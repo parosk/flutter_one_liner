@@ -1,8 +1,9 @@
-import 'dart:convert';
 
+import 'dart:convert';
+import 'dart:html';
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-//import 'package:hashtagable/widgets/hashtag_text.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,6 +36,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          openDialog(context);
+        },
+        child: const Icon(Icons.edit),
+      ),
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
@@ -106,6 +113,40 @@ class HomePage extends StatelessWidget {
               })), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+class SomeDialog extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: const Text('DartPad'),
+      ),
+      body:  HtmlElementView(
+        // key: UniqueKey(),
+        viewType: 'iframeElement',
+      ),
+    );
+  }
+}
+
+void openDialog(BuildContext context) {
+
+  final _url = 'https://dartpad.dev/?null_safety=true&id';
+   final  _iframeElement = IFrameElement()
+      ..src = _url
+      ..id = 'iframe'
+      ..style.border = 'none';
+    ui.platformViewRegistry.registerViewFactory(
+      'iframeElement',
+          (int viewId) => _iframeElement,
+    );
+
+
+  Navigator.of(context).push(new MaterialPageRoute<Null>(
+      builder: (BuildContext context) {
+        return  SomeDialog();
+      },
+      fullscreenDialog: true));
 }
 
 Future<String> getJson() {
